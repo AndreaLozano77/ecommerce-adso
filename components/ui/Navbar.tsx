@@ -14,7 +14,7 @@ export const Navbar = () => {
           </Link>
         </NextLink>
         <Box flex={1} />
-        <Box sx={{ display: { xs: 'none', sm: 'block'} }}>
+        <Box sx={{ display: { xs: 'none', sm: 'block'} }} >
           <NextLink href='/category/mouse' passHref legacyBehavior>
             <Link>
               <Button>Mouse</Button>

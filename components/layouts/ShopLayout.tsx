@@ -1,7 +1,7 @@
-
 import { FC } from 'react'
 import Head from 'next/head'
 import { Navbar } from '../ui/Navbar';
+import React from 'react';
 
 interface Props {
   title: string;
