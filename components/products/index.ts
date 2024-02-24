@@ -1,2 +1,3 @@
-export * from './ProductCard.tsx'
-export * from './ProductList.tsx'
+export * from './ProductCard'
+export * from './ProductList'
+export * from './ProductSlidesShow'
