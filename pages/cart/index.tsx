@@ -1,7 +1,7 @@
 import React from 'react'
 import { ShopLayout } from '../../components/layouts'
 import { Button, Card, CardContent, Divider, Grid, Typography } from '@mui/material'
-import { CartList, OrderSumary } from '../../components/cart'
+import { CartList, OrderSummary } from '../../components/cart'
 
 const CartPage  = () => {
   return (
@@ -17,7 +17,7 @@ const CartPage  = () => {
             <CardContent>
               <Typography variant='h2'>Orden</Typography>
               <Divider sx={{ my:2 }} />
-              <OrderSumary />
+              <OrderSummary />
               <Button color='secondary' className='circular-btm' fullWidth>
                 Pagar
               </Button>
