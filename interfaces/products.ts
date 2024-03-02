@@ -11,9 +11,9 @@ export interface IProduct {
   type: IType;
   gender: 'hombre' | 'mujer' | 'unisex';
 
-  createdAT: string;
+  createdAt: string;
   updatedAt: string;
 }
-  
+
 export type ISize = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL' | '3XL';
 export type IType = 'camisetas' | 'buzos' | 'gorras';

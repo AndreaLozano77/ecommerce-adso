@@ -1,18 +1,17 @@
-import type { NextApiRequest, NextApiResponse } from 'next'; 
+import type { NextApiRequest, NextApiResponse } from 'next';
 import { db, seedDatabase } from '../../database';
 import { Product } from '../../models';
 
 type Data = {
   name: string;
-}
+};
 
 export default async function handler(
-  req: NextApiRequest, 
+  req: NextApiRequest,
   res: NextApiResponse<Data>
-  ) {
-
-  if(process.env.NODE_ENV == 'production') {
-    return res.status(401).json({ name: 'No tienes acceso a esta API'});
+) {
+  if (process.env.NODE_ENV === 'production') {
+    return res.status(401).json({ name: 'No tienes acceso a esta API' });
   }
 
   await db.connect();

@@ -1,12 +1,12 @@
-import mongoose, {Schema, model, Model} from 'mongoose';
+import mongoose, { Schema, model, Model } from 'mongoose';
 import { IProduct } from '../interfaces';
 
 const productSchema = new Schema(
   {
-    description: { type: String, required: true, default: ''},
+    description: { type: String, required: true, default: '' },
     images: [{ type: String }],
-    inStock: { type: Number, required: true, default: 0},
-    price: { type: Number, required: true, default: 0},
+    inStock: { type: Number, required: true, default: 0 },
+    price: { type: Number, required: true, default: 0 },
     sizes: [
       {
         type: String,
@@ -16,13 +16,13 @@ const productSchema = new Schema(
         },
       },
     ],
-    slug: { type: String, required: true, unique: true },
-    tags: [{type: String}],
-    title: {type: String, required: true},
+    slug: { type: String, reuqired: true, unique: true },
+    tags: [{ type: String }],
+    title: { type: String, required: true },
     type: {
       type: String,
       enum: {
-        values: ['Camisetas', 'buzos', 'gorras'],
+        values: ['camisetas', 'buzos', 'gorras'],
         message: '{VALUE} no es un tipo válido',
       },
       default: 'camisetas',
@@ -30,10 +30,10 @@ const productSchema = new Schema(
     gender: {
       type: String,
       enum: {
-        values: ['Hombre', 'Mujer', 'Unisex'],
-        message: '{VALUE} no es un género válido',
+        values: ['hombre', 'mujer', 'unisex'],
+        message: '{VALUE} no es un genero válido',
       },
-      default: 'Hombre',
+      default: 'hombre',
     },
   },
   {
@@ -41,6 +41,9 @@ const productSchema = new Schema(
   }
 );
 
-const Product: Model<IProduct> = mongoose.models.Product || model('Product', productSchema)
+productSchema.index({ title: 'text', tags: 'text' });
+
+const Product: Model<IProduct> =
+  mongoose.models.Product || model('Product', productSchema);
 
 export default Product;
